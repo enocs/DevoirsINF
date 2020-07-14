@@ -77,12 +77,15 @@ public class Position {
      * Cette methode fais la multiplication de 2 positions de telle sorte que :
      *      this.i *= position.i
      *      this.j *= position.j
-     * @param position la position à multiplier à notre position actuelle
+     * @param i la position à multiplier à notre position actuelle
      */
-    public void multiplierPos(Position position){
+    public void multiplierPos(int i, int j){
+//
+//        this.i *= position.i;
+//        this.j *= position.j;
 
-        this.i *= position.i;
-        this.j *= position.j;
+        this.i *= i;
+        this.j *= j;
     }
 
     @Override
@@ -90,23 +93,4 @@ public class Position {
         return "Position{ " + i + " , " + j + " }";
     }
 
-    public static void main(String[] args) {
-
-        Position posA = new Position(0,1);
-        Position posB = new Position(9,6);
-
-        System.out.println("---------------------------------------------------------");
-        System.out.println("\nAffichage première position : \n" + posA);
-        System.out.println("---------------------------------------------------------");
-        System.out.println("Affichage deuxième position : \n" + posA);
-        System.out.println("---------------------------------------------------------");
-        posA.additionnerPos(posB);
-        System.out.println("Addition position : \n" + posA);
-        System.out.println("---------------------------------------------------------");
-        posA.soustrairePos(new Position(5,13));
-        System.out.println("Soustraction position : \n" + posA);
-        System.out.println("---------------------------------------------------------");
-        posA.multiplierPos(new Position(3,-4));
-        System.out.println("Multiplication position : \n" + posA);
-    }
 }

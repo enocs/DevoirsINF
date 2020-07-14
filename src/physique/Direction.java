@@ -14,7 +14,7 @@ public class Direction {
     private static final int VALEUR_MAX = 3;
 
     //Déclaration des champs membres de la classe
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     /**
      * Cette méthode permet d'obtenir la direction opposée à cell reçu en paramètre.
@@ -57,7 +57,7 @@ public class Direction {
     public static Position directionAPosition(int direction){
 
         //Declaration de la position à retourner
-        Position position = new Position();
+        Position position = null;
 
         //Conversion de la direction vers la position
         switch (direction){

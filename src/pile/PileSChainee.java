@@ -102,38 +102,4 @@ public class PileSChainee {
         return debut.element;
     }
 
-
-    public static void main(String[] args) {
-
-        testPile();
-
-    }
-
-    private static void testPile() {
-
-        System.out.println("---------------------------------------");
-        System.out.println("---------------TEST PILE---------------");
-        System.out.println("---------------------------------------");
-
-
-        PileSChainee maPile = new PileSChainee();
-
-        for(int i=0;i<10;i++) {
-            try {
-                maPile.empiler(i);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-
-        for(int i=0;i<10;i++) {
-            try {
-                System.out.println(maPile.depiler());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-
-    }
-
 }

@@ -1,6 +1,5 @@
 package donjon;
 
-import physique.Direction;
 import physique.Position;
 
 import java.util.Arrays;
@@ -11,23 +10,24 @@ public class Case {
     private final int NOMBRE_VOISINS = 4;
 
     //Les attributs de la classe
-    Position position;
+    Position pos = new Position();
     private boolean decouverte;
     private boolean fin;
     private boolean developpe;
-    private String[][] voisin = new String[NOMBRE_VOISINS][NOMBRE_VOISINS];
+    private Case[] voisin = new Case[NOMBRE_VOISINS];
 
     //Constructeurs de la classe
-    public Case(Position position){
-        this.position.setI(position.getI());
-        this.position.setJ(position.getJ());
+    public Case(Position pos){
+
+        this.pos.setI(pos.getI());
+        this.pos.setJ(pos.getJ());
     }
 
     /**
      * Petmet d'obtenir une copie de la position
      * @return la copie de la position membre
      */
-    public Position getPosition() { return position.clone(); }
+    public Position getPos() { return this.pos.clone(); }
 
     public boolean getDeveloppe(){ return developpe; }
 
@@ -41,13 +41,13 @@ public class Case {
 
     public void setFin(boolean fin) { this.fin = fin; }
 
-    public String getVoisin(int direction) { return voisin[direction][direction]; }
+    public Case getVoisin(int direction) { return voisin[direction]; }
 
-    public void setVoisin(String voisin, int direction) { this.voisin[direction][direction] = voisin; }
+    public void setVoisin(int direction, Case cases) { voisin[direction] = cases; }
 
     @Override
     public String toString() {
-        return "Case{" + " position=" + position + ", decouverte=" + decouverte + ", fin=" + fin +
+        return "Case{" + " position=" + pos + ", decouverte=" + decouverte + ", fin=" + fin +
                 ", developpe=" + developpe + ", voisin=" + Arrays.toString(voisin) + "}";
     }
 }
